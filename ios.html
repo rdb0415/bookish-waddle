@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iPhoneX -->
+    <!-- minimal-ui: 아이폰 사파리 url창 축소 -->
+    <!-- viewport-fit=cover: 아이폰x 전체화면 적용-->
+    <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover">
+    <title>Document</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        span {position: relative;}
+        addr {
+            cursor: pointer;
+        }
+        addr:hover::after {
+            content: attr(title);
+            display: block;
+            position: absolute;
+            transition: all .3s ease-in;
+            -webkit-transition: all .3s ease-in;
+            -moz-transition: all .3s ease-in;
+            -ms-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+        }
+        .wrap {
+            /* iPhone 가로모드 */
+            padding-right: constant(safe-area-inset-right);
+            padding-left: constant(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+            padding-left: env(safe-area-inset-left);
+        }
+        .btn {
+            /* iPhone 세로모드 */
+            padding: 15px 0 calc(constent(safe-area-inset-bottom) + 15px);
+            padding: 15px 0 calc(env(safe-area-inset-bottom) + 15px);
+        }
+    </style>
+    <script>
+        //모바일 웹접속시 url창 안보이게 처리
+        window.addEventListener("load",function(){
+            setTimeout(loaded,100);
+            }, false);
+            functionloaded(){
+            window.scrollTo(0,1);
+        }
+    </script>
+</head>
+<body>
+    <a href="main_bnr_img.png" download="download">
+        <img src="" alt="">
+    </a>
+    <span><addr title="aaaD">Lorem Ipsum</addr> is simply dummy text of the printing and typesetting industry.</span>
+    <pre>
+        <!-- iOS 11.0버전 -->
+        consteant(safe-area-inset-top)
+        consteant(safe-area-inset-right)
+        consteant(safe-area-inset-bottom)
+        consteant(safe-area-inset-left)
+
+        <!-- iOS 11.2 이상 -->
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left)
+    </pre>
+</body>
+</html>
